@@ -7,7 +7,7 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+  <link rel="dns-prefetch" href="//cdn.bootcss.com" />
 </head>
 <body>
   <div id="app">Please wait……</div>
@@ -20,7 +20,7 @@
       loadNavbar: true,
       mergeNavbar: true,
 
-      coverpage: true,
+      //coverpage: true,
       themesColor: '#19BE6B',
       auto2top: true,
       maxlLevel: 9,
@@ -32,22 +32,31 @@
       }
     }
   </script>
+
+<script type="text/x-mathjax-config">
+  var mathId = document.getElementById("post-content"); //选择公式识别范围
+  MathJax.Hub.Config({
+      showProcessingMessages: false, //关闭js加载过程信息
+      messageStyle: "none", //不显示信息
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+          inlineMath:  [ ["$", "$"] ], //行内公式选择$
+          displayMath: [ ["$$","$$"] ], //段内公式选择$$
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'] //避开某些标签
+      },
+      "HTML-CSS": {
+          availableFonts: ["STIX","TeX"], //可选字体
+          showMathMenu: false //关闭右击菜单显示
+      }
+  });
+  MathJax.Hub.Queue(["Typeset",MathJax.Hub,mathId]);
+  </script>
+  <script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify-copy-code"></script>
   <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
-  <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <script>
-    const gitalk = new Gitalk({
-      clientID: '1add87a2b63faf7096e4',
-      clientSecret: 'b99f12156f40902061679860a756bf92a821c48c',
-      repo: 'docsify-starter',
-      owner: 'swimly',
-      admin: ['swimly'],
-      // facebook-like distraction free mode
-      distractionFreeMode: true
-    })
-  </script>
+ 
 </body>
 </html>
