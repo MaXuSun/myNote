@@ -13,3 +13,5 @@
 * [katex](/)
     * [support.md](/katex/support.md)
     * [supported-table.md](/katex/supported-table.md)
+* [考研](/考研/README.md)
+    * [考研复习计划.md](/考研/考研复习计划.md)
