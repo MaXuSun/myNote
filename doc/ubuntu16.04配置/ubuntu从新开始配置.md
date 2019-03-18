@@ -59,6 +59,7 @@ sudo ln -s /usr/bin/python3.5 /usr/bin/python
 6. 使用监控工具conky
     * https://www.linuxidc.com/Linux/2012-09/71478.htm
     * https://www.linuxidc.com/Linux/2011-02/32508.htm
+    
 7. 安装shadowsocks
     * 此时已经将Ubuntu中原生的python2.7换为了python3.7,所以在安装前需要安装pip3
     * sudo apt-get install python3-pip
@@ -99,3 +100,24 @@ sudo apt-get install git
     git config --global user.name "注册GitHub的用户名"
     git config --global user.email "注册GitHub的邮箱"
 
+11. 安装字体教程
+    * 将要安装的字体放在一个文件夹下，以/home/UsrName/Download/Font为例 
+    * sudo cp -r /home/UsrName/Download/Font /usr/share/fonts/ #将字体文件夹全部复制到/usr/share/fonts/目录下
+    * 在终端中依次输入以下三条命令：
+    >sudo mkfontscale
+    sudo mkfontdir
+    sudo fc-cache -fv
+    * 至此新的字体安装完成
+    * 此外，如果安装了双系统，可以从Windows系统中得到字体文件，具体位置是 C: 盘 Windows/Fonts 
+12. chrome
+sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install google-chrome-stable
+/usr/bin/google-chrome-stable
+
+13. delete unuse apps
+    apt purge libreoffice-common
+    apt purge unity-webapps-common
+    apt purge thunderbird totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot gnome-mines cheese gnome-sudoku transmission-common gnome-orca webbrowser-app landscape-client-ui-install
+    apt purge deja-dup
