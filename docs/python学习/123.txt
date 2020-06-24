@@ -1,0 +1,12 @@
+1. 词典(dict)
+    * 相当于map,词典元素没有顺序，只能通过键来引用
+    * 示例代码
+        ```
+        dic = {}                            # 初始化空词典
+        dic = {'tom':11,'sam':57,'jun':12}  # 初始化
+        dic['tom'] = 33                     # 修改值
+        del dic['sam']                      # 删除dic['sam']
+
+        for key in dic: 
+            print(key,dic[key])     # 循环中,**dict的每个键**被赋值给key
+        ```
